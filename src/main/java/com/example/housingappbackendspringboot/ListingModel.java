@@ -15,7 +15,6 @@ public class ListingModel {
     @Id
     private ObjectId _id;
     private Integer id;
-    private String imdbId;
     private String title;
     private String description;
     private Number price;

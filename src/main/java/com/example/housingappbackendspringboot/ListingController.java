@@ -12,18 +12,18 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/movies")
+@RequestMapping("/feed/items")
 public class ListingController {
 
     @Autowired
     private ListingService service;
     @GetMapping
-    public ResponseEntity<List<ListingModel>> getAllMovies(){
-        return new ResponseEntity<List<ListingModel>>(service.allMovies(), HttpStatus.OK);
+    public ResponseEntity<List<ListingModel>> getAllListings(){
+        return new ResponseEntity<List<ListingModel>>(service.allListings(), HttpStatus.OK);
     }
 
-    @GetMapping("/{imdbId}")
-    public ResponseEntity<Optional<ListingModel>> getSingleMovie(@PathVariable String imdbId){
-        return new ResponseEntity<Optional<ListingModel>>(service.singleMovie(imdbId), HttpStatus.OK);
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<ListingModel>> getSingleMovie(@PathVariable Integer id){
+        return new ResponseEntity<Optional<ListingModel>>(service.singleListing(id), HttpStatus.OK);
     }
 }

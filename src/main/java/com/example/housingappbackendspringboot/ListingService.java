@@ -10,12 +10,12 @@ public class ListingService {
 
     @Autowired
     private ListingRepository listingRepository;
-    public List<ListingModel> allMovies() {
+    public List<ListingModel> allListings() {
         System.out.println(listingRepository.findAll().toString());
         return listingRepository.findAll();
     }
 
-    public Optional<ListingModel> singleMovie(String imdbId) {
-        return listingRepository.findMovieByImdbId(imdbId);
+    public Optional<ListingModel> singleListing(Integer Id) {
+        return listingRepository.findListingById(Id);
     }
 }
