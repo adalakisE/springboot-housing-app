@@ -18,4 +18,8 @@ public class ListingService {
     public Optional<ListingModel> singleListing(Integer Id) {
         return listingRepository.findListingById(Id);
     }
+
+    public List<ListingModel> searchListingsByQuery(QueryObject queryObject) {
+        return listingRepository.findByQueryObject(queryObject);
+    }
 }
